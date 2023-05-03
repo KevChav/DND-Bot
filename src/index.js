@@ -16,7 +16,7 @@ client.on('ready', (c) => {
     console.log(`${c.user.tag} is online. `);
 });
 
-
+//comments 
 client.on('interactionCreate', (interaction) =>{
     if (!interaction.isChatInputCommand()) return;
     console.log(interaction.commandName);

@@ -23,6 +23,20 @@ const commands = [
 
 },
 {
+    name: 'd2',
+    description: 'roll x amount of d20s',
+    options: [
+        {
+            name: 'dice-num',
+            description: 'the amount of dice.',
+            type: ApplicationCommandOptionType.Number,
+            required: true,
+
+        },
+    ]
+
+},
+{
     name: 'd4',
     description: 'roll x amount of d4s',
     options: [

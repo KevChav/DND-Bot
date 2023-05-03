@@ -40,6 +40,21 @@ client.on('interactionCreate', (interaction) =>{
         }
         interaction.reply(`Your dice results are ${diceResults} and your grand total is ${grandTotal} !`)
     }
+    if (interaction.commandName ==='d2')
+    {
+        const mydice = interaction.options.get('dice-num').value;
+        var diceResults = "";
+        var diceRoll = "";
+        grandTotal = 0;
+        for (var i = 0; i < mydice; i++){
+            
+            diceRoll = Math.floor((Math.random() * 2)) + 1;
+            diceResults += diceRoll + ", ";
+            grandTotal += parseInt(diceRoll);
+
+        }
+        interaction.reply(`Your dice results are ${diceResults} and your grand total is ${grandTotal} !`)
+    }
     if (interaction.commandName ==='d4')
     {
         const mydice = interaction.options.get('dice-num').value;

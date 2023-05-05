@@ -4,8 +4,8 @@ const { REST, Routes, ApplicationCommandOptionType} = require('discord.js');
 
 const commands = [
 {
-    name: 'ping',
-    description: 'Replies withg pong!',
+    name: 'recap',
+    description: 'Recap of last session',
 
 },
 {

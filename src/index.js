@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { Client, IntentsBitField} = require('discord.js');
+const { Client, IntentsBitField, EmbedBuilder} = require('discord.js');
 
 const client = new Client({
     intents: [
@@ -21,8 +21,37 @@ client.on('interactionCreate', (interaction) =>{
     if (!interaction.isChatInputCommand()) return;
     console.log(interaction.commandName);
 
-    if (interaction.commandName ==='ping'){
-        interaction.reply('pong!');
+    if (interaction.commandName ==='recap'){
+        const embed = new EmbedBuilder()
+            .setTitle("Call of the NetherDeep Recap")
+            .setAuthor({ name: 'Teemo', iconURL: 'https://cdn.discordapp.com/attachments/1103487850261000214/1103490444589027368/What_can_I_do3F_Emote.png' })
+            .setDescription("The Midnight Suns find themselves swept up in another mystery regarding Ruidium that may give them answers to finding Alyxian, and discovering things about themselves.")
+            .setColor("DarkRed")
+            .setImage('https://cdn.discordapp.com/attachments/1103487850261000214/1103487929436864592/cover.png')
+            .addFields(
+                {   name: 'Chapter 4: The Jewel of Hope', 
+                    value: "After delivering a Ruidium infused item, The Midnight Suns are in the Sigil District in Ank'harel."
+                
+                },
+                
+                {   name: '\u200B', value: '\u200B' //this is an empty zone
+                
+                },
+                { 
+                    name: 'Task:', 
+                    value: 'Investigating the Life Dome in the River District',
+                    inline: true,
+                },
+                { 
+                    name: 'Currently:', 
+                    value: 'Readying up with Prolix after dinner.',
+                    inline: true,
+                },
+            )
+            .setTimestamp()
+            .setFooter({ text: 'End of recap'})
+                interaction.reply({ embeds: [embed] });
+
         
     }
     if (interaction.commandName ==='d20')
@@ -145,7 +174,7 @@ client.on('interactionCreate', (interaction) =>{
         }
         interaction.reply(`Your dice results are ${diceResults} and your grand total is ${grandTotal} !`)
     }
-} )
+} );
 
 
 
